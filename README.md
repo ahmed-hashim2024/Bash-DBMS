@@ -13,7 +13,7 @@
 
 ## 🚀 Project Overview
 
-This is a **File-Based Database Management System (DBMS)** meticulously crafted entirely using **Bash Shell Script**. It offers a robust and interactive Command Line Interface (CLI) for performing fundamental database and table operations.
+This is a **File-Based Database Management System (DBMS)** meticulously crafted entirely using **Bash Shell Script**. It offers a robust and interactive Command Line Interface (CLI) for performing fundamental database and table operations (CRUD).
 
 This project demonstrates the power of Bash scripting to create complex, functional applications, utilizing core Linux utilities like `awk`, `sed`, `grep`, and `column` for data manipulation and presentation.
 
@@ -23,11 +23,11 @@ This project demonstrates the power of Bash scripting to create complex, functio
 * **Table Management (DDL):** Create new tables by defining columns, List all tables, and Drop existing tables.
 * **Data Manipulation (DML - CRUD):**
     * **Insert:** Insert new records into a table.
-    * **Select:** Display all data from a table in a clean, formatted manner.
-    * **Delete:** Delete records based on a specific column value (WHERE condition).
+    * **Select:** Display all data from a table in a clean, formatted manner using the `column -t` utility.
+    * **Delete:** Delete records based on a specified column value (WHERE condition).
     * **Update:** Update specific fields in records based on a condition (SET/WHERE logic).
-* **Data Integrity:** Simple validation for names and column numbers.
-* **Delimiter-Based Storage:** Data within tables is stored as plain text files, using the **pipe character (`|`)** as the field delimiter for easy parsing and manipulation by shell tools.
+* **CLI Interface:** User-friendly menus for seamless navigation.
+
 
 ---
 
@@ -37,6 +37,35 @@ This project demonstrates the power of Bash scripting to create complex, functio
 
 You need a Linux or Unix-like environment (e.g., Ubuntu, macOS, WSL) with **Bash** installed. The project relies on standard utilities like `awk`, `column`, `ls`, and `mktemp`.
 
+### Installation and Execution
+
+1.  **Clone the Repository:**
+    ```bash
+    git clone [https://github.com/ahmed-hashim2024/bash-dbms.git](https://github.com/ahmed-hashim2024/bash-dbms.git) # Replace with the actual link
+    cd bash-dbms
+    ```
+
+2.  **Make the script Executable:**
+    ```bash
+    chmod +x dbms.sh # Assuming the script file is named dbms.sh
+    ```
+
+3.  **Run the DBMS:**
+    ```bash
+    ./dbms.sh
+    ```
+
+### 📂 Project Structure (File-Based Storage)
+
+Databases are stored as directories, and tables are stored as plain files within them.
+
 ```bash
-# Check your Bash version
-bash --version
+.
+├── Databases/
+│   ├── UserDB/
+│   │   ├── Profiles      # Table file (Data stored with '|' delimiter)
+│   │   └── Orders        # Table file
+│   └── MarketingDB/
+│       └── Campaigns     # Table file
+├── dbms.sh               # The main Bash script
+└── README.md
